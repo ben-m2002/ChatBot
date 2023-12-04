@@ -34,10 +34,18 @@ nlu:
     - arigato gozaimasu
     - preciate you jit
 
-- intent : order_pizza
+
+- intent : order_food
   examples : |
-    - I want to order a [pizza](food)
-    - can I get a [pizza](food)
-    - Lets order a [pizza](food)
-    - How about a [pizza](food)
-    
+    - I want to order food
+    - can I get food please
+    - Lets order a food
+    - How about I get some food man
+
+- intent : inform_food
+  examples : |
+    - [steak](food)
+    - [burger](food)
+    - [sushi](food)
+    - [salad](food)
+    - [pasta](food)
