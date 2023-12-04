@@ -1,0 +1,43 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+
+- intent : rude
+  examples : |
+    - you suck
+    - you are dumb
+
+- intent : thank
+  examples: |
+    - thanks
+    - thank you
+    - thank you so much
+    - thanks bot
+    - thanks for that
+    - arigato 
+    - arigato gozaimasu
+    - preciate you jit
+
+- intent : order_pizza
+  examples : |
+    - I want to order a [pizza](food)
+    - can I get a [pizza](food)
+    - Lets order a [pizza](food)
+    - How about a [pizza](food)
+    
