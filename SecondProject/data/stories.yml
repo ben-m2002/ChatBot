@@ -20,6 +20,6 @@ stories:
 - story : Order Pizza
   steps:
     - intent : order_pizza
-    - action: utter_orderPizza
+    - action: action_extract_food_entity
 
 

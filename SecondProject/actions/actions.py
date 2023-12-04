@@ -12,6 +12,11 @@ class ExtractFoodEntity(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(text="Hello World!")
+        food_entity = next(tracker.get_latest_entity_values("food"), None)
+
+        if food_entity:
+            dispatcher.utter_message(text=f"You have selected that you want {food_entity} as your food choice.")
+        else:
+            dispatcher.utter_message(text="I am sorry but I could not detect what food you want")
 
         return []

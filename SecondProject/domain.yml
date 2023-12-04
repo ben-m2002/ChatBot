@@ -27,7 +27,8 @@ responses:
   utter_orderPizza:
     - text: "What kind of pizza would you like?"
 
-
+actions:
+  - action_extract_food_entity
 
 session_config:
   session_expiration_time: 60
