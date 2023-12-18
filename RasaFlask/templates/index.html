@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rasa Flask ChatBot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+    <style>
+        .chat-sign-button {
+            width: 60px;
+            height: 60px;
+            font-size: 16px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <h1 class = "text-center">Rasa Flask ChatBot</h1>
+
+        <!-- -->
+        <button id = "chat-widget-button" class = "btn btn-primary rounded-circle position-fixed chat-sign-button"
+        style = "bottom: 20px; right: 20px"></button>
+        <!-- -->
+        <div id = "chat-widget" class = "card position-fixed shadow d-none" style="bottom: 100px; right: 20px; width: 300px">
+            <div class = "card-header bg-primary text-white">
+                Chatbot
+                <button id = "chat-widget-close-button" type = "button" class = "btn-close float-end" aria-label="Close"></button>
+            </div>
+
+             <div class = "card-body" id = "chat-widget-messages">
+                <!--Messages-->
+            </div>
+
+             <div class = "card-footer">
+                <input id = "chat-widget-input" type = "text" class = "form-control" placeholder = "Type your message here..."/>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#chat-widget-button").click(function() {
+                $("#chat-widget").toggleClass("d-none");
+            });
+
+            $("#chat-widget-close-button").click(function() {
+                $("#chat-widget").addClass("d-none");
+            });
+
+            // handles user input
+            $("#chat-widget-input").keypress(function(e) {
+                if(e.which === 13) {
+                   let message = $("#chat-widget-input").val();
+                   $("#chat-widget-input").val("");
+                   //Append message to the chat-widget-messages
+                    $("#chat-widget-messages").append("<div><strong>"  + "You: </strong> " + message + "</div>");
+
+                    $.ajax({
+                        type : "POST",
+                        url : "/webhook",
+                        contentType : "application/json",
+                        data : JSON.stringify({"message" : message}),
+                        success : function(data) {
+                            //Append message to the chat-widget-messages
+                            $("#chat-widget-messages").append("<div><strong>"  + "Bot: </strong> " + data.response + "</div>");
+                        },
+                        error : function (error) {
+                            console.log(error);
+                        }
+                    })
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
