@@ -1,5 +1,5 @@
 from typing import Any, Text, Dict, List
-from config import API_KEY
+from .config import API_KEY
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 import requests
@@ -35,7 +35,6 @@ class ActionWeather(Action):
         try:
             response = requests.get(url)
             api_response = response.json()
-            print(f"api_response: {api_response}")
             return api_response
         except requests.exceptions.RequestException as e:
             print(e)

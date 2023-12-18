@@ -38,6 +38,34 @@ nlu:
     - What is the weather?
     - What's the weather like?
 
+- intent : ask_weather_city
+  examples : |
+    - How is the weather in [New York](city)?
+    - Can you tell me the weather in [London](city)?
+    - Please, what is the weather in [Tokyo](city)?
+    - What's the weather like in [Paris](city)?
+    - What is the weather in [Dubai](city)?
+    - Could you check the weather in [Singapore](city) for me?
+    - I wonder what the weather is like in [Sydney](city).
+    - Do you know if it's sunny in [Rome](city)?
+    - Is it raining in [Los Angeles](city) right now?
+    - What are the current weather conditions in [Bangkok](city)?
+    - Tell me about today's weather in [Delhi](city).
+    - I'd like to know the weather forecast for [Shanghai](city).
+    - Is it cold in [Istanbul](city) at the moment?
+    - What's the temperature in [Toronto](city) right now?
+    - I'm looking for the weather in [Mumbai](city).
+    - Could you find the weather in [Berlin](city)?
+    - I need the weather report for [Barcelona](city).
+    - How's the weather in [Moscow](city) today?
+    - Is it warm in [Chicago](city) today?
+    - Are there any weather warnings for [Seoul](city)?
+    - What is the weather forecast for [Mexico City](city)?
+    - Can you check if it's going to rain in [São Paulo](city)?
+    - I'm interested in the weather in [Amsterdam](city).
+    - What's the weather situation in [Cairo](city)?
+    - I need to know if it's windy in [Buenos Aires](city).
+
 - intent : get_weather
   examples : |
     - [Provo](city)
@@ -45,3 +73,28 @@ nlu:
     - [Orem](city)
     - [Lehi](city)
     - [American Fork](city)
+    -[New York](city)
+    -[London](city)
+    -[Tokyo](city)
+    -[Paris](city)
+    -[Dubai](city)
+    -[Singapore](city)
+    -[Sydney](city)
+    -[Rome](city)
+    -[Los Angeles](city)
+    -[Bangkok](city)
+    -[Delhi](city)
+    -[Shanghai](city)
+    -[Istanbul](city)
+    -[Toronto](city)
+    -[Mumbai](city)
+    -[Berlin](city)
+    -[Barcelona](city)
+    -[Moscow](city)
+    -[Chicago](city)
+    -[Seoul](city)
+    -[Mexico City](city)
+    -[São Paulo](city)
+    -[Amsterdam](city)
+    -[Cairo](city)
+    -[Buenos Aires](city)
